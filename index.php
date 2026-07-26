@@ -1,1 +1,3530 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPSwamy TecZ - Electrical & Electronics Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Standalone, fast, bug-free libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #ff8c00;
+            --accent-color: #159895;
+            --dark-color: #0d3b45;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --gradient-primary: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(26, 95, 122, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-secondary);
+            color: white !important;
+            padding: 12px 28px !important;
+            border-radius: 25px;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5) !important;
+        }
+
+        /* Office Login Button */
+        .office-login-btn {
+            background: var(--dark-color);
+            color: white !important;
+            padding: 10px 22px !important;
+            border-radius: 25px;
+            font-weight: 600 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease !important;
+        }
+
+        .office-login-btn::after {
+            display: none !important;
+        }
+
+        .office-login-btn:hover {
+            background: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d3b45 0%, #1a5f7a 50%, #159895 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 140, 0, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 140, 0, 0.2);
+            border: 1px solid rgba(255, 140, 0, 0.5);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            color: var(--secondary-color);
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 16px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 16px 35px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.3), rgba(21, 152, 149, 0.3));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image-main i {
+            font-size: 180px;
+            color: rgba(255, 140, 0, 0.9);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 20px 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            animation: floatCard 3s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-card.card-1 {
+            top: -20px;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: -20px;
+            left: -30px;
+            animation-delay: 1.5s;
+        }
+
+        .floating-card i {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .floating-card h4 {
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .floating-card p {
+            color: var(--text-light);
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 50px;
+            background: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(26, 95, 122, 0.1);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 35px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.1), rgba(21, 152, 149, 0.1));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient-primary);
+            transform: rotateY(360deg);
+        }
+
+        .service-icon i {
+            font-size: 32px;
+            color: var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon i {
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--secondary-color);
+            gap: 12px;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 120px 50px;
+            background: white;
+        }
+
+        .why-us-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-us-content .section-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: var(--light-bg);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .feature-item:hover {
+            border-left-color: var(--secondary-color);
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .feature-text h4 {
+            font-size: 18px;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .why-us-visual {
+            position: relative;
+        }
+
+        .visual-main {
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-main::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.2) 0%, transparent 70%);
+        }
+
+        .visual-center {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .visual-center i {
+            font-size: 150px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .visual-center h3 {
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .visual-center p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 50px;
+            background: var(--light-bg);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-quote {
+            font-size: 48px;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-stars i {
+            color: #ffc107;
+            font-size: 18px;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-primary); /* FIX: Syntax error fixed here */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            color: var(--dark-color);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 50px;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 7 3.134 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.24-5-3-5-5 2.24-5 5 2.24 5 5 5zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-container h2 {
+            color: white;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-container p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 50px;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            padding-right: 30px;
+        }
+
+        .contact-info .section-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.1), rgba(21, 152, 149, 0.1));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--gradient-primary);
+        }
+
+        .contact-icon i {
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon i {
+            color: white;
+        }
+
+        .contact-text h4 {
+            color: var(--dark-color);
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .contact-form-wrapper {
+            background: var(--light-bg);
+            border-radius: 25px;
+            padding: 50px;
+        }
+
+        .form-title {
+            font-size: 28px;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark-color);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(26, 95, 122, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 80px 50px 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand .logo-text h1 {
+            color: white;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column ul a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* ==================== LOGIN MODAL STYLES ==================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .login-modal {
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--light-bg);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-close:hover {
+            background: #e74c3c;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .login-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.3);
+        }
+
+        .login-icon i {
+            font-size: 36px;
+            color: white;
+        }
+
+        .login-header h2 {
+            font-size: 28px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 22px;
+        }
+
+        .login-form label {
+            display: block;
+            color: var(--dark-color);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 16px 18px 16px 48px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(26, 95, 122, 0.1);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color);
+        }
+
+        .remember-me span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: var(--secondary-color);
+        }
+
+        .login-submit {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 17px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .login-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.4);
+        }
+
+        .login-error {
+            background: #fee;
+            color: #c00;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+            border-left: 4px solid #c00;
+        }
+
+        .login-error.show {
+            display: block;
+        }
+
+        /* ==================== OFFICE DASHBOARD STYLES ==================== */
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+            background: var(--light-bg);
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            background: var(--dark-color);
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dashboard-logo .logo-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+        }
+
+        .dashboard-logo h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .dashboard-user {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-welcome {
+            text-align: right;
+        }
+
+        .user-welcome span {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .user-welcome strong {
+            font-size: 15px;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logout-btn:hover {
+            background: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        .dashboard-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .dashboard-title {
+            font-size: 32px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-subtitle {
+            color: var(--text-light);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 18px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .action-btn.primary {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .action-btn.primary:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.4);
+        }
+
+        /* Invoice Form Styles */
+        .invoice-form-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .invoice-form-section h3 {
+            font-size: 22px;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .invoice-form-section .form-group {
+            margin-bottom: 0;
+        }
+
+        .invoice-form-section .form-group label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .invoice-form-section .form-group input,
+        .invoice-form-section .form-group select,
+        .invoice-form-section .form-group textarea {
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+
+        /* Items Table */
+        .items-table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .items-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .items-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .items-table td input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .items-table td input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .remove-row-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-row-btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .add-row-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .add-row-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .generate-invoice-btn {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+        }
+
+        .generate-invoice-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.5);
+        }
+
+        /* ==================== INVOICE PREVIEW STYLES (Matching PDF) ==================== */
+        .invoice-preview-section {
+            display: none;
+            margin-top: 40px;
+            overflow-x: auto; /* Allows horizontal scroll on small screens */
+        }
+
+        .invoice-preview-section.show {
+            display: block;
+        }
+
+        .invoice-preview-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .preview-action-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .print-btn:hover {
+            background: var(--dark-color);
+        }
+
+        .download-btn {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #e67e00;
+        }
+
+        .download-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .close-preview-btn {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .close-preview-btn:hover {
+            background: #7f8c8d;
+        }
+
+        /* CRITICAL FIX: Invoice Document Styles for Perfect A4 Fit */
+        .invoice-document {
+            background: #0d3b45 !important;
+            border: 1px solid #d4af37;
+            width: 210mm !important; /* Force exact A4 width */
+            min-height: 297mm !important; /* Force exact A4 height */
+            max-width: 210mm !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            position: relative !important;
+            transform: none !important;
+            filter: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            overflow: hidden !important; /* Hide any spillover to guarantee single page */
+            color: #ffffff !important;
+        }
+        
+        .invoice-document > * {
+            position: relative !important;
+            transform: none !important;
+            filter: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .invoice-items-table {
+            display: table !important;
+            width: 100% !important;
+            table-layout: fixed !important;
+        }
+        
+        .invoice-items-table thead {
+            display: table-header-group !important;
+        }
+        
+        .invoice-items-table tbody {
+            display: table-row-group !important;
+        }
+        
+        .invoice-items-table tr {
+            display: table-row !important;
+        }
+        
+        .invoice-items-table th,
+        .invoice-items-table td {
+            display: table-cell !important;
+        }
+
+        .invoice-header {
+            background: linear-gradient(135deg, #0a2a32 0%, #143e4a 100%) !important;
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        .invoice-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .invoice-company {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .company-logo-circle {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #d4af37;
+        }
+
+        .company-name-invoice {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .company-name-invoice span {
+            color: #d4af37;
+        }
+
+        .company-contact-small {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .invoice-gstin-box {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #d4af37;
+            display: inline-block;
+        }
+
+        .invoice-title-area {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .invoice-title-text {
+            font-size: 38px;
+            font-weight: 900;
+            color: #d4af37;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .invoice-meta {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #ffffff;
+        }
+
+        .invoice-meta-item strong {
+            color: #d4af37;
+        }
+
+        .invoice-body {
+            padding: 35px 40px;
+            background: #0d3b45;
+            color: #ffffff;
+        }
+
+        .invoice-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .invoice-section-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .invoice-section-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .invoice-detail-row {
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        .invoice-detail-label {
+            font-weight: 700;
+            color: #d4af37;
+        }
+
+        .invoice-detail-value {
+            color: #ffffff;
+        }
+
+        .invoice-items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 13px;
+            border: 1px solid #ddd;
+        }
+
+        .invoice-items-table thead {
+            background: #1a5f7a !important;
+        }
+
+        .invoice-items-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+            color: #d4af37;
+            border: 1px solid #1a5f7a;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .invoice-items-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+            line-height: 1.6;
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .invoice-items-table .sl-num {
+            font-weight: 700;
+            color: #0d3b45;
+            text-align: center;
+            width: 50px;
+        }
+
+        .invoice-items-table .qty-cell {
+            text-align: center;
+            width: 100px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .invoice-totals {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .totals-table {
+            width: 350px;
+        }
+
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .totals-row span {
+            color: #ffffff;
+        }
+
+        .totals-row.grand-total {
+            background: #d4af37 !important;
+            color: #000000 !important;
+            font-weight: 800;
+            font-size: 18px;
+            border-radius: 8px;
+            border-bottom: none;
+        }
+
+        .totals-row.grand-total span {
+            color: #000000 !important;
+        }
+
+        .totals-row.grand-total .total-amount {
+            color: #000000 !important;
+            font-size: 22px;
+        }
+
+        .amount-in-words {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #d4af37;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            border-radius: 0 8px 8px 0;
+            color: #ffffff;
+        }
+
+        .amount-in-words strong {
+            color: #d4af37;
+        }
+
+        .invoice-footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .bank-details-box {
+            background: #ffffff !important;
+            border: 1px solid #e0e0e0 !important;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .bank-details-box h4 {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0d3b45 !important;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .bank-detail-line {
+            font-size: 12px;
+            margin-bottom: 6px;
+            color: #333333 !important;
+        }
+
+        .bank-detail-line strong {
+            color: #0d3b45 !important;
+        }
+
+        .signature-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+            min-height: 180px;
+            background: #ffffff !important;
+            border: 1px solid #e0e0e0 !important;
+            border-radius: 8px;
+            padding: 20px;
+            color: #333333 !important;
+        }
+
+        .stamp-placeholder {
+            width: 120px;
+            height: 120px;
+            border: 3px dashed #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .stamp-placeholder::before {
+            content: 'KPSWAMY TECZ';
+            position: absolute;
+            font-weight: 800;
+            font-size: 14px;
+            color: #1a5f7a !important;
+        }
+
+        .signature-line {
+            font-size: 14px;
+            color: #333333 !important;
+            margin-top: 10px;
+        }
+        
+        .signature-line strong {
+            color: #0d3b45 !important;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            color: #0d3b45 !important;
+            font-size: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-content p {
+                margin: 0 auto 35px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .why-us-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .why-us-content .section-header {
+                text-align: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding-right: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .invoice-two-col,
+            .invoice-footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 15px 25px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .services,
+            .why-us,
+            .testimonials,
+            .contact {
+                padding: 80px 25px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .dashboard-header {
+                padding: 15px 25px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .dashboard-content {
+                padding: 30px 25px;
+            }
+
+            .dashboard-actions {
+                flex-direction: column;
+            }
+
+            .invoice-form-section {
+                padding: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .invoice-body {
+                padding: 25px;
+            }
+
+            .invoice-header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .invoice-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .invoice-totals {
+                justify-content: center;
+            }
+
+            .totals-table {
+                width: 100%;
+            }
+
+            .invoice-preview-actions {
+                justify-content: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            .invoice-preview-section,
+            .invoice-preview-section * {
+                visibility: visible;
+            }
+
+            .invoice-preview-actions {
+                display: none !important;
+            }
+
+            .invoice-document {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+                width: 210mm !important;
+                min-height: 297mm !important;
+            }
+
+            .invoice-document {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        /* Notification Animations */
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== MAIN WEBSITE ==================== -->
+    <div id="mainWebsite">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">K</div>
+                    <div class="logo-text">
+                        <h1>KPSwamy TecZ</h1>
+                        <span>Electrical & Electronics</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+                    <li><a href="#" onclick="openLoginModal()" class="office-login-btn">
+                        <i class="fas fa-lock"></i> Office Login
+                    </a></li>
+                </ul>
+
+                <div class="mobile-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-particles">
+                <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+                <div class="particle" style="left: 40%; animation-delay: 4s;"></div>
+                <div class="particle" style="left: 60%; animation-delay: 6s;"></div>
+                <div class="particle" style="left: 80%; animation-delay: 8s;"></div>
+                <div class="particle" style="left: 90%; animation-delay: 10s;"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i>
+                        Trusted Electrical Solutions Since 2010
+                    </div>
+                    <h1>Expert <span>Electrical & Electronics</span> Services You Can Trust</h1>
+                    <p>We provide comprehensive electrical installation, maintenance, and electronics solutions for residential, commercial, and industrial clients. Quality workmanship guaranteed.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn-primary">
+                            <i class="fas fa-tools"></i>
+                            Our Services
+                        </a>
+                        <a href="#contact" class="btn-outline">
+                            <i class="fas fa-phone-alt"></i>
+                            Contact Us
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <div class="hero-image-main">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        
+                        <div class="floating-card card-1">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Certified Experts</h4>
+                            <p>Licensed Professionals</p>
+                        </div>
+                        
+                        <div class="floating-card card-2">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Support</h4>
+                            <p>Emergency Services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cogs"></i>
+                    Our Expertise
+                </div>
+                <h2>Comprehensive Electrical & Electronics Services</h2>
+                <p>From simple repairs to complex installations, we offer a full range of electrical and electronic solutions tailored to meet your specific needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Electrical Installation</h3>
+                    <p>Professional wiring, panel upgrades, outlet installations, and complete electrical system setup for new constructions and renovations.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Maintenance & Repair</h3>
+                    <p>Routine inspections, troubleshooting, emergency repairs, and preventive maintenance to keep your systems running safely and efficiently.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar & Renewable Energy</h3>
+                    <p>Solar panel installation, inverter systems, battery storage solutions, and renewable energy consulting for sustainable power needs.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Electronics Solutions</h3>
+                    <p>Circuit board repair, custom electronics fabrication, automation systems, and smart home device integration services.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial Systems</h3>
+                    <p>Heavy-duty electrical systems, motor controls, PLC programming, and industrial automation for manufacturing facilities.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <h3>Safety & Compliance</h3>
+                    <p>Electrical safety audits, code compliance inspections, fire alarm systems, and surge protection installation services.</p>
+                    <a href="#" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us" id="about">
+            <div class="why-us-container">
+                <div class="why-us-content">
+                    <div class="section-header">
+                        <div class="section-badge">
+                            <i class="fas fa-star"></i>
+                            Why Choose Us
+                        </div>
+                        <h2>Your Trusted Partner for All Electrical Needs</h2>
+                        <p>With over 15 years of experience, we deliver excellence in every project we undertake.</p>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Certified & Licensed Team</h4>
+                                <p>All our technicians are fully certified, licensed, and undergo continuous training to stay updated with latest technologies and safety standards.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>24/7 Emergency Support</h4>
+                                <p>Electrical emergencies don't wait for business hours. Our team is available round-the-clock to address urgent issues promptly.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Competitive Pricing</h4>
+                                <p>Transparent pricing with no hidden costs. We provide detailed quotes upfront and offer flexible payment options for larger projects.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Guarantee</h4>
+                                <p>We stand behind our work with comprehensive warranties on both labor and materials. Your satisfaction is our top priority.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-us-visual">
+                    <div class="visual-main">
+                        <div class="visual-center">
+                            <i class="fas fa-bolt"></i>
+                            <h3>Powering Your World</h3>
+                            <p>From concept to completion, we ensure every project meets the highest standards of quality, safety, and efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-comments"></i>
+                    Testimonials
+                </div>
+                <h2>What Our Clients Say About Us</h2>
+                <p>Don't just take our word for it – hear from some of our satisfied customers who have experienced our exceptional service firsthand.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Exceptional service from start to finish! KPSwamy TecZ handled our entire office rewiring project professionally and completed it ahead of schedule. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Business Owner, Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">We've been using KPSwamy TecZ for all our industrial electrical needs for over 5 years. Their expertise in automation systems has significantly improved our production efficiency.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Suresh Patel</h4>
+                            <p>Plant Manager, Hyderabad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">Their solar installation team was incredibly knowledgeable. They helped us reduce our electricity bills by 60%. The after-sales support is outstanding too!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Anita Menon</h4>
+                            <p>Homeowner, Chennai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Ready to Power Up Your Project?</h2>
+                <p>Contact us today for a free consultation and quote. Our expert team is ready to help you with all your electrical and electronics needs.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get Free Quote
+                    </a>
+                    <a href="tel:+919876543210" class="btn-outline">
+                        <i class="fas fa-phone-alt"></i>
+                        Call Now: +91 98765 43210
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <div class="section-badge">
+                            <i class="fas fa-paper-plane"></i>
+                            Get In Touch
+                        </div>
+                        <h2>Contact Us Today</h2>
+                        <p>Have a question or need a quote? Reach out to us through any of the channels below or fill out the contact form.</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>123 Tech Park, Electronic City Phase 1,<br>Bangalore, Karnataka - 560100</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+91 98765 43210<br>+91 80 2345 6789</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>info@kpzswamytectz.com<br>support@kpzswamytectz.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Emergency: 24/7 Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form action="" method="POST">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Required</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="installation">Electrical Installation</option>
+                                    <option value="maintenance">Maintenance & Repair</option>
+                                    <option value="solar">Solar & Renewable Energy</option>
+                                    <option value="electronics">Electronics Solutions</option>
+                                    <option value="industrial">Industrial Systems</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" placeholder="Describe your requirements..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="logo">
+                            <div class="logo-icon">K</div>
+                            <div class="logo-text">
+                                <h1>KPSwamy TecZ</h1>
+                                <span>Electrical & Electronics</span>
+                            </div>
+                        </a>
+                        <p>Your trusted partner for all electrical and electronics solutions. We deliver quality, safety, and innovation in every project.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Electrical Installation</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Maintenance & Repair</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Solar Solutions</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Industrial Systems</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Safety Audits</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</a></li>
+                            <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                            <li><a href="mailto:info@example.com"><i class="fas fa-envelope"></i> info@kpzswamytectz.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2024 KPSwamy TecZ. All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== LOGIN MODAL ==================== -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="login-modal">
+            <button class="login-close" onclick="closeLoginModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="login-header">
+                <div class="login-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Office Login</h2>
+                <p>Enter your credentials to access dashboard</p>
+            </div>
+
+            <div class="login-error" id="loginError">
+                <i class="fas fa-exclamation-circle"></i> Invalid username or password!
+            </div>
+
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-submit">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </button>
+            </form>
+
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; text-align: center;">
+                <p style="font-size: 13px; color: #888;">Demo Credentials:</p>
+                <p style="font-size: 13px; color: var(--primary-color); font-weight: 600;"><strong>admin / kptecz@2024</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OFFICE DASHBOARD ==================== -->
+    <div class="dashboard" id="officeDashboard">
+        <header class="dashboard-header">
+            <div class="dashboard-logo">
+                <div class="logo-icon">K</div>
+                <h2>KPSwamy TecZ <span style="font-size: 12px; opacity: 0.7;">| Office Dashboard</span></h2>
+            </div>
+            <div class="dashboard-user">
+                <div class="user-welcome">
+                    <span>Welcome back,</span><br>
+                    <strong id="welcomeUser">Admin</strong>
+                </div>
+                <button class="logout-btn" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <h1 class="dashboard-title">Invoice Management System</h1>
+            <p class="dashboard-subtitle">Create professional GST-compliant invoices for your clients</p>
+
+            <div class="dashboard-actions">
+                <button class="action-btn primary" onclick="showInvoiceForm()">
+                    <i class="fas fa-plus-circle"></i> Create New Invoice
+                </button>
+                <button class="action-btn" onclick="viewInvoices()">
+                    <i class="fas fa-file-invoice"></i> View Invoices
+                </button>
+                <button class="action-btn" onclick="exportData()">
+                    <i class="fas fa-download"></i> Export Data
+                </button>
+            </div>
+
+            <!-- Invoice Creation Form -->
+            <div class="invoice-form-section" id="invoiceFormSection">
+                <h3><i class="fas fa-edit"></i> Create New Invoice</h3>
+
+                <!-- Invoice Basic Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Invoice Number *</label>
+                        <input type="text" id="invNumber" value="KPS/INV/2026-27/503" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Invoice Date *</label>
+                        <input type="date" id="invDate" required>
+                    </div>
+                </div>
+
+                <!-- Bill To Section -->
+                <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-user-tie"></i> Bill To Details</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Client Name *</label>
+                        <input type="text" id="clientName" placeholder="e.g., Mercantile Marine Department (MMD)" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone/GSTIN Reference</label>
+                        <input type="text" id="clientPhone" placeholder="e.g., 95AC001217G1DC">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label>Address *</label>
+                        <textarea id="clientAddress" rows="2" placeholder="Enter complete address" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>GSTIN</label>
+                        <input type="text" id="clientGSTIN" placeholder="e.g., 95AC001217G1DC">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" id="clientState" placeholder="e.g., West Bengal">
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-project-diagram"></i> Project Details</h4>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label>Work Order Reference</label>
+                        <input type="text" id="workOrder" placeholder="e.g., W.O Ref: Work Order dated 11-May-2026">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>NMODKOL No.</label>
+                        <input type="text" id="nmodkol" placeholder="e.g., NMODKOL/193/2024-MMD-KOLKATA">
+                    </div>
+                    <div class="form-group">
+                        <label>SAC Code</label>
+                        <input type="text" id="sacCode" placeholder="e.g., 9954 (Electrical installation)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Project Description</label>
+                    <textarea id="projectDesc" rows="2" placeholder="Brief description of the project"></textarea>
+                </div>
+
+                <!-- Line Items -->
+                <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-list-alt"></i> Service Items</h4>
+                
+                <div class="items-table-wrapper">
+                    <table class="items-table" id="itemsTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">SL</th>
+                                <th>Description of Services</th>
+                                <th style="width: 120px;">QTY</th>
+                                <th style="width: 80px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itemsTableBody">
+                            <tr>
+                                <td style="text-align: center; font-weight: 600;">01</td>
+                                <td><textarea rows="3" class="item-desc" placeholder="Enter service description..."></textarea></td>
+                                <td><input type="text" class="item-qty" placeholder="190 Nos"></td>
+                                <td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; font-weight: 600;">02</td>
+                                <td><textarea rows="3" class="item-desc" placeholder="Enter service description..."></textarea></td>
+                                <td><input type="text" class="item-qty" placeholder="16 Nos"></td>
+                                <td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; font-weight: 600;">03</td>
+                                <td><textarea rows="3" class="item-desc" placeholder="Enter service description..."></textarea></td>
+                                <td><input type="text" class="item-qty" placeholder="190 Nos"></td>
+                                <td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; font-weight: 600;">04</td>
+                                <td><textarea rows="3" class="item-desc" placeholder="Enter service description..."></textarea></td>
+                                <td><input type="text" class="item-qty" placeholder="NA"></td>
+                                <td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="add-row-btn" onclick="addNewRow()">
+                    <i class="fas fa-plus"></i> Add New Item Row
+                </button>
+
+                <!-- Financial Details -->
+                <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-rupee-sign"></i> Financial Summary</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Taxable Value (₹) *</label>
+                        <input type="number" id="taxableValue" placeholder="e.g., 281799.66" required>
+                    </div>
+                    <div class="form-group">
+                        <label>GST Rate (%)</label>
+                        <select id="gstRate">
+                            <option value="18">IGST @ 18%</option>
+                            <option value="12">IGST @ 12%</option>
+                            <option value="5">IGST @ 5%</option>
+                            <option value="0">Exempted</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="generate-invoice-btn" onclick="generateInvoicePreview()">
+                    <i class="fas fa-file-invoice-dollar"></i> Generate Invoice Preview
+                </button>
+            </div>
+
+            <!-- Invoice Preview Section -->
+            <div class="invoice-preview-section" id="invoicePreviewSection">
+                <div class="invoice-preview-actions">
+                    <button class="preview-action-btn print-btn" onclick="printInvoice()">
+                        <i class="fas fa-print"></i> Print Invoice
+                    </button>
+                    <button class="preview-action-btn download-btn" onclick="downloadPDF(event)">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button class="preview-action-btn close-preview-btn" onclick="closePreview()">
+                        <i class="fas fa-times"></i> Close Preview
+                    </button>
+                </div>
+
+                <!-- INVOICE DOCUMENT - EXACT MATCH TO PDF -->
+                <div class="invoice-document" id="invoiceDocument">
+                    <!-- Header -->
+                    <div class="invoice-header">
+                        <div class="invoice-header-top">
+                            <div class="invoice-company">
+                                <div class="company-logo-circle">
+                                    <span style="font-size: 28px;">⚡</span>
+                                </div>
+                                <div>
+                                    <div class="company-name-invoice">KPSwamy <span>TecZ</span></div>
+                                    <div class="company-contact-small">
+                                        Tiruvannamalai, TamilNadu, 60660704<br>
+                                        Phone: 9566021167 | Email: balamuruga86@yahoo.com
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="invoice-title-text">INVOICE</div>
+                            </div>
+                        </div>
+                        <div class="invoice-gstin-box">
+                            GSTIN: 33DDCP5417Z1NZS
+                        </div>
+                        <div class="invoice-meta">
+                            <div class="invoice-meta-item">
+                                Invoice No: <strong id="previewInvNo">KPS/INV/2026-27/503</strong>
+                            </div>
+                            <div class="invoice-meta-item">
+                                Date: <strong id="previewInvDate">09-06-2026</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="invoice-body">
+                        <!-- Bill To & Project Details -->
+                        <div class="invoice-two-col">
+                            <div class="invoice-section-box">
+                                <div class="invoice-section-title">BILL TO</div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">Name:</span>
+                                    <span class="invoice-detail-value" id="previewClientName">Mercantile Marine Department (MMD)</span>
+                                </div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">Address:</span>
+                                    <span class="invoice-detail-value" id="previewClientAddress">Marine House, Napier Road, Hastings, Kolkata - 700022</span>
+                                </div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">GSTIN:</span>
+                                    <span class="invoice-detail-value" id="previewClientGSTIN">95AC001217G1DC</span>
+                                </div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">State:</span>
+                                    <span class="invoice-detail-value" id="previewClientState">West Bengal</span>
+                                </div>
+                            </div>
+
+                            <div class="invoice-section-box">
+                                <div class="invoice-section-title">PROJECT DETAILS</div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-value" id="previewWorkOrder">W.O Ref: Work Order dated 11-May-2026<br>NMODKOL/193/2024-MMD-KOLKATA</span>
+                                </div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">SAC Code:</span>
+                                    <span class="invoice-detail-value" id="previewSACCode">9954 (Electrical installation)</span>
+                                </div>
+                                <div class="invoice-detail-row">
+                                    <span class="invoice-detail-label">Project:</span>
+                                    <span class="invoice-detail-value" id="previewProjectDesc">Supply & Commissioning of Electrical Points at Examination Halls, MMD Kolkata</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Items Table -->
+                        <table class="invoice-items-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">SL</th>
+                                    <th>DESCRIPTION OF SERVICES</th>
+                                    <th style="width: 100px;">QTY</th>
+                                </tr>
+                            </thead>
+                            <tbody id="previewItemsBody">
+                                <tr>
+                                    <td class="sl-num">01</td>
+                                    <td>Supply & installation of premium modular switch Points and 16A Power socket units optimized for All in one PC. Use of ISI-marked 44mm copper wire for enhanced safety and efficient power delivery. Neatly concealed wiring using durable PVC battens to maintain a clutter-free space. Professional installation with proper earthing (1.5 sqmm Wire), Insulation, and safety compliance. Comprehensive testing to ensure flawless operation.</td>
+                                    <td class="qty-cell">190 Nos</td>
+                                </tr>
+                                <tr>
+                                    <td class="sl-num">02</td>
+                                    <td>The selection of MCB breakers and panels must be based on the required current (ampere) rating.</td>
+                                    <td class="qty-cell">16 Nos</td>
+                                </tr>
+                                <tr>
+                                    <td class="sl-num">03</td>
+                                    <td>Positioning and alignment of tables as per site requirements. Drilling and fixing of tables securely using high-quality screws, Aluminium L angle and fasteners.</td>
+                                    <td class="qty-cell">190 Nos</td>
+                                </tr>
+                                <tr>
+                                    <td class="sl-num">04</td>
+                                    <td>Supply and Installation of Industrial-Grade Power Socket With High-Quality Fire-Resistant Electrical Cabling (2.5mm²)m Server Room.</td>
+                                    <td class="qty-cell">NA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Totals -->
+                        <div class="invoice-totals">
+                            <div class="totals-table">
+                                <div class="totals-row">
+                                    <span>Taxable Value</span>
+                                    <span id="previewTaxableValue">₹ 2,81,799.66</span>
+                                </div>
+                                <div class="totals-row">
+                                    <span>IGST @ 18%</span>
+                                    <span id="previewIGST">₹ 50,720.34</span>
+                                </div>
+                                <div class="totals-row grand-total">
+                                    <span>GRAND TOTAL</span>
+                                    <span class="total-amount" id="previewGrandTotal">₹ 3,32,500.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amount in Words -->
+                        <div class="amount-in-words">
+                            <strong>Amount in Words:</strong> <span id="previewAmountWords">#NR Three Lakh Thirty-Two Thousand Five Hundred Only</span>
+                        </div>
+
+                        <!-- Footer Grid -->
+                        <div class="invoice-footer-grid">
+                            <div class="bank-details-box">
+                                <h4>BANK DETAILS (NEFT/RTGS)</h4>
+                                <div class="bank-detail-line"><strong>Bank:</strong> STATE BANK OF INDIA</div>
+                                <div class="bank-detail-line"><strong>A/c Name:</strong> BALAMURUGAN S</div>
+                                <div class="bank-detail-line"><strong>A/c No:</strong> 44020607707</div>
+                                <div class="bank-detail-line"><strong>IFSC:</strong> SBIN0000983</div>
+                            </div>
+
+                            <div class="signature-box">
+                                <div class="stamp-placeholder"></div>
+                                <div class="signature-line">For <strong>KPSwamy TecZ</strong></div>
+                                <div style="margin-top: 30px; font-family: cursive; font-size: 24px; color: #0d3b45;">
+                                    S. Balamurugan
+                                </div>
+                                <div class="signature-line signature-name">Authorized Signatory</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== LOGIN SYSTEM ====================
+        
+        const VALID_CREDENTIALS = {
+            username: 'admin',
+            password: 'kptecz@2024'
+        };
+
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.getElementById('loginError').classList.remove('show');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === VALID_CREDENTIALS.username && password === VALID_CREDENTIALS.password) {
+                closeLoginModal();
+                document.getElementById('mainWebsite').style.display = 'none';
+                document.getElementById('officeDashboard').classList.add('active');
+                document.getElementById('welcomeUser').textContent = username.charAt(0).toUpperCase() + username.slice(1);
+                
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('invDate').value = today;
+                
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                document.getElementById('loginError').classList.add('show');
+                const modal = document.querySelector('.login-modal');
+                modal.style.animation = 'shake 0.5s ease';
+                setTimeout(() => modal.style.animation = '', 500);
+            }
+        }
+
+        function handleLogout() {
+            document.getElementById('officeDashboard').classList.remove('active');
+            document.getElementById('mainWebsite').style.display = 'block';
+            document.getElementById('invoiceFormSection').style.display = 'block';
+            document.getElementById('invoicePreviewSection').classList.remove('show');
+        }
+
+        // ==================== MOBILE MENU ====================
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('onclick')) return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // ==================== INVOICE MANAGEMENT ====================
+
+        let itemCounter = 4;
+
+        function showInvoiceForm() {
+            document.getElementById('invoiceFormSection').style.display = 'block';
+            document.getElementById('invoicePreviewSection').classList.remove('show');
+            window.scrollTo({ top: document.getElementById('invoiceFormSection').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function addNewRow() {
+            itemCounter++;
+            const tbody = document.getElementById('itemsTableBody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td style="text-align: center; font-weight: 600;">${String(itemCounter).padStart(2, '0')}</td>
+                <td><textarea rows="3" class="item-desc" placeholder="Enter service description..."></textarea></td>
+                <td><input type="text" class="item-qty" placeholder="Enter quantity"></td>
+                <td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+            `;
+            tbody.appendChild(newRow);
+        }
+
+        function removeRow(btn) {
+            const row = btn.closest('tr');
+            row.remove();
+            renumberRows();
+        }
+
+        function renumberRows() {
+            const rows = document.querySelectorAll('#itemsTableBody tr');
+            rows.forEach((row, index) => {
+                row.cells[0].textContent = String(index + 1).padStart(2, '0');
+            });
+            itemCounter = rows.length;
+        }
+
+        function generateInvoicePreview() {
+            const invNo = document.getElementById('invNumber').value || 'KPS/INV/2026-27/XXX';
+            const invDate = document.getElementById('invDate').value ? formatDate(document.getElementById('invDate').value) : 'DD-MM-YYYY';
+            const clientName = document.getElementById('clientName').value || 'Client Name';
+            const clientAddress = document.getElementById('clientAddress').value || 'Client Address';
+            const clientGSTIN = document.getElementById('clientGSTIN').value || 'N/A';
+            const clientState = document.getElementById('clientState').value || 'State';
+            const workOrder = document.getElementById('workOrder').value || 'Work Order Reference';
+            const nmodkol = document.getElementById('nmodkol').value || '';
+            const sacCode = document.getElementById('sacCode').value || '9954';
+            const projectDesc = document.getElementById('projectDesc').value || 'Project Description';
+            const taxableValue = parseFloat(document.getElementById('taxableValue').value) || 0;
+            const gstRate = parseFloat(document.getElementById('gstRate').value) || 18;
+
+            const igstAmount = taxableValue * (gstRate / 100);
+            const grandTotal = taxableValue + igstAmount;
+
+            document.getElementById('previewInvNo').textContent = invNo;
+            document.getElementById('previewInvDate').textContent = invDate;
+            document.getElementById('previewClientName').textContent = clientName;
+            document.getElementById('previewClientAddress').textContent = clientAddress;
+            document.getElementById('previewClientGSTIN').textContent = clientGSTIN;
+            document.getElementById('previewClientState').textContent = clientState;
+            
+            let workOrderText = workOrder;
+            if (nmodkol) workOrderText += '<br>' + nmodkol;
+            document.getElementById('previewWorkOrder').innerHTML = workOrderText;
+            document.getElementById('previewSACCode').textContent = sacCode + ' (Electrical installation)';
+            document.getElementById('previewProjectDesc').textContent = projectDesc;
+
+            const itemsBody = document.getElementById('previewItemsBody');
+            itemsBody.innerHTML = '';
+            const formRows = document.querySelectorAll('#itemsTableBody tr');
+            formRows.forEach((row, index) => {
+                const desc = row.querySelector('.item-desc')?.value || 'Service description';
+                const qty = row.querySelector('.item-qty')?.value || 'NA';
+                itemsBody.innerHTML += `
+                    <tr>
+                        <td class="sl-num">${String(index + 1).padStart(2, '0')}</td>
+                        <td>${desc}</td>
+                        <td class="qty-cell">${qty}</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('previewTaxableValue').textContent = '₹ ' + formatCurrency(taxableValue);
+            document.getElementById('previewIGST').textContent = '₹ ' + formatCurrency(igstAmount);
+            document.getElementById('previewGrandTotal').textContent = '₹ ' + formatCurrency(grandTotal);
+
+            document.getElementById('previewAmountWords').textContent = '#NR ' + numberToWords(grandTotal);
+
+            document.getElementById('invoicePreviewSection').classList.add('show');
+            window.scrollTo({ top: document.getElementById('invoicePreviewSection').offsetTop - 80, behavior: 'smooth' });
+        }
+
+        function closePreview() {
+            document.getElementById('invoicePreviewSection').classList.remove('show');
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return String(date.getDate()).padStart(2, '0') + '-' + 
+                   String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                   date.getFullYear();
+        }
+
+        function formatCurrency(num) {
+            return num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function numberToWords(num) {
+            const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
+                         'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen',
+                         'Seventeen', 'Eighteen', 'Nineteen'];
+            const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+            if (num === 0) return 'Zero Only';
+
+            let words = '';
+            const crore = Math.floor(num / 10000000);
+            if (crore > 0) {
+                words += ones[crore] + ' Crore ';
+                num %= 10000000;
+            }
+
+            const lakh = Math.floor(num / 100000);
+            if (lakh > 0) {
+                if (lakh < 20) words += ones[lakh] + ' Lakh ';
+                else words += tens[Math.floor(lakh / 10)] + ' ' + ones[lakh % 10] + ' Lakh ';
+                num %= 100000;
+            }
+
+            const thousand = Math.floor(num / 1000);
+            if (thousand > 0) {
+                if (thousand < 20) words += ones[thousand] + ' Thousand ';
+                else words += tens[Math.floor(thousand / 10)] + ' ' + ones[thousand % 10] + ' Thousand ';
+                num %= 1000;
+            }
+
+            const hundred = Math.floor(num / 100);
+            if (hundred > 0) {
+                words += ones[hundred] + ' Hundred ';
+                num %= 100;
+            }
+
+            if (num > 0) {
+                if (num < 20) words += ones[num];
+                else words += tens[Math.floor(num / 10)] + ' ' + ones[num % 10];
+            }
+
+            return words.trim() + ' Only';
+        }
+
+        function printInvoice() {
+            window.print();
+        }
+
+        // ==================== FIXED PDF DOWNLOAD FUNCTION (STANDALONE LIBRARIES - NO HANG) ====================
+        function downloadPDF(e) {
+            e.preventDefault();
+            
+            const element = document.getElementById('invoiceDocument');
+            const invoiceNo = document.getElementById('invNumber').value || 'Invoice';
+            
+            const btn = e.target.closest('.download-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            btn.disabled = true;
+
+            // Fallback for older browsers that don't support document.fonts
+            const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+            
+            fontsReady.then(function() {
+                setTimeout(function() {
+                    html2canvas(element, {
+                        scale: 2, // High quality
+                        useCORS: true,
+                        allowTaint: false,
+                        logging: false,
+                        backgroundColor: '#0d3b45',
+                        windowWidth: 1200, // Standardize rendering width
+                        width: element.offsetWidth,
+                        height: element.offsetHeight
+                    }).then(function(canvas) {
+                        // Fallback for different jsPDF global variable structures
+                        const jsPDF = window.jspdf ? window.jspdf.jsPDF : window.jsPDF;
+                        const pdf = new jsPDF('p', 'mm', 'a4');
+                        
+                        const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm
+                        const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
+                        
+                        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                        
+                        // FORCE EXACT A4 FIT: Map image to 0,0,210mm,297mm
+                        // This stretches/squishes the content vertically if it overflows, 
+                        // ensuring it perfectly fills the A4 page width and height with zero white borders.
+                        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+                        pdf.save(invoiceNo.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf');
+                        
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        showNotification('✅ PDF downloaded successfully!', 'success');
+                    }).catch(function(error) {
+                        console.error('PDF generation failed:', error);
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        showNotification('❌ PDF failed: ' + error.message, 'error');
+                    });
+                }, 100); // 100ms delay to allow spinner to render
+            });
+        }
+        
+        // Notification system
+        function showNotification(message, type) {
+            const existingNotif = document.querySelector('.pdf-notification');
+            if (existingNotif) existingNotif.remove();
+            
+            const notification = document.createElement('div');
+            notification.className = 'pdf-notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 30px;
+                background: ${type === 'success' ? '#27ae60' : '#e74c3c'};
+                color: white;
+                padding: 18px 30px;
+                border-radius: 12px;
+                font-size: 15px;
+                font-weight: 600;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                z-index: 99999;
+                animation: slideInRight 0.4s ease;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.4s ease forwards';
+                setTimeout(() => notification.remove(), 400);
+            }, 4000);
+        }
+
+        function viewInvoices() {
+            alert('Invoice History Feature\n\nThis feature would:\n1. Display list of all generated invoices\n2. Allow search/filter by date, client, amount\n3. Enable editing of draft invoices\n4. Show payment status tracking');
+        }
+
+        function exportData() {
+            alert('Export Data Feature\n\nAvailable export options:\n• Excel/CSV format for accounting software\n• PDF batch export\n• JSON for backup/restore');
+        }
+
+        // Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLoginModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+                e.preventDefault();
+                openLoginModal();
+            }
+        });
+    </script>
+</body>
+</html>
