@@ -1438,69 +1438,68 @@
         .ref-no-display { font-weight: 700; color: var(--primary-color); }
         .date-display { font-weight: 600; color: var(--text-dark); }
 
-        /* Optimized Letter Body for tighter, neater spacing */
         .letter-body {
-            padding: 30px 40px;
-            line-height: 1.6; /* Tightened from 1.9 */
-            font-size: 14px;
+            padding: 40px;
+            line-height: 1.9;
+            font-size: 15px;
             color: var(--text-dark);
         }
 
-        .letter-to-section { margin-bottom: 20px; }
+        .letter-to-section { margin-bottom: 25px; }
 
         .letter-to-label {
             font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 5px;
-            font-size: 14px;
+            margin-bottom: 8px;
+            font-size: 15px;
         }
 
         .letter-to-name {
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         .letter-to-address {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-light);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .letter-subject {
             background: var(--light-bg);
-            padding: 12px 15px;
+            padding: 15px 20px;
             border-left: 4px solid var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .letter-subject-label { font-weight: 700; color: var(--dark-color); margin-right: 8px; }
         .letter-subject-text { font-weight: 600; color: var(--primary-color); }
 
         .letter-salutation {
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 15px;
+            margin-bottom: 15px;
             color: var(--text-dark);
         }
 
         .letter-content-text {
-            font-size: 14px;
-            line-height: 1.6; /* Tightened from 2 */
+            font-size: 15px;
+            line-height: 2;
             text-align: justify;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             white-space: pre-wrap;
         }
 
         .letter-closing {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: left;
         }
 
         .closing-text {
-            font-size: 14px;
-            margin-bottom: 40px;
+            font-size: 15px;
+            margin-bottom: 50px;
             color: var(--text-dark);
         }
 
@@ -1522,7 +1521,7 @@
             font-size: 18px;
             font-weight: 700;
             color: var(--dark-color);
-            font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+            font-family: 'Courier Prime', 'Courier New', Courier, monospace; /* Kept typewriter font */
             margin-bottom: 5px;
             display: block;
         }
@@ -1547,7 +1546,7 @@
             color: #999;
             font-size: 11px;
             border-top: 1px solid #eee;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         /* Responsive */
@@ -2584,7 +2583,7 @@
             const content = document.getElementById('letterDocument').innerHTML;
             const printWindow = window.open('', '_blank');
             printWindow.document.write('<html><head><title>KPSwamy TecZ - Letter</title>');
-            printWindow.document.write('<style>body{font-family:\'Courier Prime\', \'Courier New\', Courier, monospace;padding:40px;line-height:1.8;color:#333;} .letter-header{background:#1a3a52;color:white;padding:30px;border-bottom:4px solid #ff8c00;} .letterhead-top{display:flex;justify-content:space-between;align-items:center;} .company-info-letter h1{font-size:28px;margin:0;} .tagline-letter{font-size:12px;opacity:0.9;letter-spacing:2px;text-transform:uppercase;} .contact-box-letter{text-align:right;font-size:13px;line-height:1.8;} .contact-box-letter div{margin:3px 0;} .letter-ref-date{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #ddd;font-size:14px;margin:20px 0;} .letter-to-section{margin-bottom:20px;} .letter-to-name{font-size:18px;font-weight:bold;color:#1a5f7a;margin:5px 0;} .letter-subject{background:#f8f9fa;padding:15px;border-left:4px solid #ff8c00;margin:20px 0;} .letter-salutation{font-size:15px;margin:15px 0;} .letter-content-text{font-size:15px;line-height:2;text-align:justify;margin:20px 0;white-space:pre-wrap;} .letter-closing{margin-top:40px;} .signature-section{text-align:right;} .sig-line{border-top:1px solid #333;width:200px;margin:0 0 10px:auto;} .sig-name{font-size:20px;color:#1a3a52;margin-bottom:5px;} .sig-designation{color:#666;font-size:14px;} .letter-footer-note{text-align:center;padding:10px;color:#999;border-top:1px solid #eee;margin-top:40px;}</style>');
+            printWindow.document.write('<style>body{font-family:\'Courier Prime\', \'Courier New\', Courier, monospace;padding:40px;line-height:1.8;color:#333;} .letter-header{background:#1a3a52;color:white;padding:30px;border-bottom:4px solid #ff8c00;} .letterhead-top{display:flex;justify-content:space-between;align-items:center;} .company-info-letter h1{font-size:28px;margin:0;} .tagline-letter{font-size:12px;opacity:0.9;letter-spacing:2px;text-transform:uppercase;} .contact-box-letter{text-align:right;font-size:13px;line-height:1.8;} .contact-box-letter div{margin:3px 0;} .letter-ref-date{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #ddd;font-size:14px;margin:20px 0;} .letter-to-section{margin-bottom:20px;} .letter-to-name{font-size:18px;font-weight:bold;color:#1a5f7a;margin:5px 0;} .letter-subject{background:#f8f9fa;padding:15px;border-left:4px solid #ff8c00;margin:20px 0;} .letter-salutation{font-size:15px;margin:15px 0;} .letter-content-text{font-size:15px;line-height:2;text-align:justify;margin:20px 0;white-space:pre-wrap;} .letter-closing{margin-top:40px;} .signature-section{text-align:right;} .sig-line{border-top:1px solid #333;width:200px;margin:0 0 10px auto;} .sig-name{font-size:20px;color:#1a3a52;margin-bottom:5px;} .sig-designation{color:#666;font-size:14px;} .letter-footer-note{text-align:center;padding:10px;color:#999;border-top:1px solid #eee;margin-top:40px;}</style>');
             printWindow.document.write('</head><body>');
             printWindow.document.write(content);
             printWindow.document.write('</body></html>');
@@ -2592,7 +2591,7 @@
             printWindow.print();
         }
 
-        // ============ SMART AUTO-FIT PDF DOWNLOAD LOGIC (LETTER PAD) ============
+        // ============ MULTI-PAGE PDF DOWNLOAD LOGIC (LETTER PAD) ============
         function downloadLetterPDF(e) {
             e.preventDefault();
             
@@ -2608,9 +2607,19 @@
             
             const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
             const scale = 2;
+
+            // Set margins to 0 to remove unnecessary space. 
+            // The HTML document's internal padding will naturally act as the page margin.
+            const marginTop = 0;    
+            const marginBottom = 0; 
+            const borderInset = 0;   
+            const borderPadding = 0; 
+            const sideMargin = 0; 
             
             fontsReady.then(function() {
                 setTimeout(function() {
+                    const breakpoints = []; 
+
                     html2canvas(element, {
                         scale: scale,
                         useCORS: true,
@@ -2624,54 +2633,44 @@
                         const jsPDF = window.jspdf ? window.jspdf.jsPDF : window.jsPDF;
                         const pdf = new jsPDF('p', 'mm', 'a4');
 
-                        const pdfWidth = pdf.internal.pageSize.getWidth();   // 210mm
-                        const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
+                        const pdfWidth = pdf.internal.pageSize.getWidth();   
+                        const pdfHeight = pdf.internal.pageSize.getHeight(); 
 
-                        // Calculate aspect ratio to fit the canvas perfectly to the A4 width
-                        let imgWidth = pdfWidth;
-                        let imgHeight = (canvas.height * imgWidth) / canvas.width;
+                        const imgWidth = pdfWidth - (sideMargin * 2);
+                        const pxPerMm = canvas.width / imgWidth;
+                        const contentAreaHeight = pdfHeight - marginTop - marginBottom;
+                        const pageHeightPx = contentAreaHeight * pxPerMm;
 
-                        const imgData = canvas.toDataURL('image/jpeg', 0.98);
+                        const slices = computeCanvasSlices(canvas, breakpoints, pageHeightPx);
+                        const totalPages = slices.length;
 
-                        if (imgHeight <= pdfHeight) {
-                            // Scenario 1: Content naturally fits on one single page. Place it exactly.
-                            pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
-                        } else if (imgHeight <= pdfHeight * 1.15) {
-                            // Scenario 2: Content is slightly too long (up to 15% overflow). 
-                            // Shrink it proportionally to fit neatly onto a single A4 page.
-                            const shrinkFactor = pdfHeight / imgHeight;
-                            imgWidth = imgWidth * shrinkFactor;
-                            imgHeight = pdfHeight;
-                            const xOffset = (pdfWidth - imgWidth) / 2; // Center it horizontally to avoid awkward left alignment
-                            pdf.addImage(imgData, 'JPEG', xOffset, 0, imgWidth, imgHeight);
-                        } else {
-                            // Scenario 3: Content is vastly too long. Slice it neatly across multiple pages.
-                            const pxPerMm = canvas.width / pdfWidth;
-                            const pageHeightPx = pdfHeight * pxPerMm;
-                            const slices = computeCanvasSlices(canvas, [], pageHeightPx);
-                            
-                            slices.forEach(function(slice, idx) {
-                                const pageCanvas = document.createElement('canvas');
-                                pageCanvas.width = canvas.width;
-                                pageCanvas.height = slice.height;
-                                const ctx = pageCanvas.getContext('2d');
-                                ctx.fillStyle = '#ffffff';
-                                ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-                                ctx.drawImage(canvas, 0, slice.start, canvas.width, slice.height, 0, 0, canvas.width, slice.height);
-                                
-                                const sliceHeightMm = slice.height / pxPerMm;
-                                const sliceImgData = pageCanvas.toDataURL('image/jpeg', 0.98);
-                                
-                                if (idx > 0) pdf.addPage();
-                                pdf.addImage(sliceImgData, 'JPEG', 0, 0, pdfWidth, sliceHeightMm);
-                            });
-                        }
+                        slices.forEach(function(slice, idx) {
+                            const pageCanvas = document.createElement('canvas');
+                            pageCanvas.width = canvas.width;
+                            pageCanvas.height = slice.height;
+                            const ctx = pageCanvas.getContext('2d');
+                            ctx.fillStyle = '#ffffff';
+                            ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+                            ctx.drawImage(
+                                canvas,
+                                0, slice.start, canvas.width, slice.height,
+                                0, 0, canvas.width, slice.height
+                            );
+
+                            const sliceHeightMm = slice.height / pxPerMm;
+                            const imgData = pageCanvas.toDataURL('image/jpeg', 0.95);
+
+                            if (idx > 0) pdf.addPage();
+
+                            // Removed PDF border and footer line drawing to eliminate unnecessary space
+                            pdf.addImage(imgData, 'JPEG', sideMargin, marginTop, imgWidth, sliceHeightMm);
+                        });
 
                         pdf.save(refNo.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf');
                         
                         btn.innerHTML = originalText;
                         btn.disabled = false;
-                        showNotification('✅ Letter PDF downloaded successfully!', 'success');
+                        showNotification('✅ Letter PDF downloaded (' + totalPages + (totalPages === 1 ? ' page)' : ' pages)'), 'success');
                     }).catch(function(error) {
                         console.error('Letter PDF generation failed:', error);
                         btn.innerHTML = originalText;
