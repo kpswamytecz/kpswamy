@@ -1970,7 +1970,7 @@
                 <div class="form-group"><label>Address *</label><textarea id="clientAddress" rows="2" placeholder="Enter complete address" required></textarea></div>
                 <div class="form-row">
                     <div class="form-group"><label>State</label><input type="text" id="clientState" placeholder="e.g., Karnataka"></div>
-                    <div class="form-group"><label>SAC / HSN Code</label><input type="text" id="sacCode" placeholder="e.g., 9954"></div>
+                    <div class="form-group"><label>Work oredr no / ref no</label><input type="text" id="Work oredr no" placeholder="e.g., 9954"></div>
                 </div>
                 <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-list-alt"></i> Service Items</h4>
                 <div class="items-table-wrapper"><table class="items-table" id="itemsTable"><thead><tr><th style="width: 50px;">SL</th><th>Description of Services</th><th style="width: 120px;">QTY</th><th style="width: 80px;">Action</th></tr></thead><tbody id="itemsTableBody"><tr><td style="text-align: center; font-weight: 600;">01</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td></tr></tbody></table></div>
@@ -2020,7 +2020,7 @@
                             </div>
                             <div class="invoice-section-box">
                                 <div class="invoice-section-title">Project Details</div>
-                                <div class="invoice-detail-row"><span class="invoice-detail-label">SAC Code:</span> <span class="invoice-detail-value" id="previewSACCode">9954</span></div>
+                                <div class="invoice-detail-row"><span class="invoice-detail-label">Work oredr no Code:</span> <span class="invoice-detail-value" id="previewWork oredr no">9954</span></div>
                             </div>
                         </div>
                         <table class="invoice-items-table">
@@ -2323,7 +2323,7 @@
             const clientAddress = document.getElementById('clientAddress').value || 'Client Address';
             const clientGSTIN = document.getElementById('clientGSTIN').value || 'N/A';
             const clientState = document.getElementById('clientState').value || 'State';
-            const sacCode = document.getElementById('sacCode').value || '9954';
+            const Work oredr no = document.getElementById('Work oredr no').value || '9954';
             const taxableValue = parseFloat(document.getElementById('taxableValue').value) || 0;
             const gstRate = parseFloat(document.getElementById('gstRate').value) || 18;
             const igstAmount = taxableValue * (gstRate / 100);
@@ -2335,7 +2335,7 @@
             document.getElementById('previewClientAddress').textContent = clientAddress;
             document.getElementById('previewClientGSTIN').textContent = clientGSTIN;
             document.getElementById('previewClientState').textContent = clientState;
-            document.getElementById('previewSACCode').textContent = sacCode;
+            document.getElementById('previewWork oredr no').textContent = Work oredr no;
             document.getElementById('previewTaxableValue').textContent = '₹ ' + formatCurrency(taxableValue);
             document.getElementById('previewIGST').textContent = '₹ ' + formatCurrency(igstAmount);
             document.getElementById('previewGrandTotal').textContent = '₹ ' + formatCurrency(grandTotal);
