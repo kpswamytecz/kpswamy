@@ -791,7 +791,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0,0,0, 0.7);
             backdrop-filter: blur(5px);
             z-index: 9999;
             justify-content: center;
@@ -1176,7 +1176,7 @@
         .invoice-header {
             background: linear-gradient(135deg, #1a3a52 0%, #2c5364 100%) !important;
             color: white;
-            padding: 25px 35px; 
+            padding: 25px 35px; /* Reduced padding */
             position: relative;
         }
 
@@ -1185,7 +1185,7 @@
         .invoice-company { display: flex; align-items: center; gap: 15px; }
 
         .company-logo-circle {
-            width: 50px; height: 50px; 
+            width: 50px; height: 50px; /* Slightly smaller logo */
             border: 3px solid #d4af37;
             border-radius: 50%;
             display: flex;
@@ -1195,7 +1195,7 @@
             color: #d4af37;
         }
 
-        .company-name-invoice { font-size: 26px; font-weight: 800; letter-spacing: 1px; } 
+        .company-name-invoice { font-size: 26px; font-weight: 800; letter-spacing: 1px; } /* Slightly smaller */
         .company-name-invoice span { color: #d4af37; }
 
         .company-contact-small { font-size: 11px; opacity: 0.85; margin-top: 5px; line-height: 1.4; }
@@ -1211,59 +1211,59 @@
         }
 
         .invoice-title-area { text-align: right; margin-top: 15px; }
-        .invoice-title-text { font-size: 34px; font-weight: 900; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; } 
+        .invoice-title-text { font-size: 34px; font-weight: 900; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; } /* Reduced font size */
 
         .invoice-meta { display: flex; justify-content: flex-end; gap: 30px; margin-top: 8px; font-size: 12px; }
         .invoice-meta-item strong { color: #d4af37; }
 
-        .invoice-body { padding: 25px 35px; } 
+        .invoice-body { padding: 25px 35px; } /* Reduced padding */
 
         .invoice-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 20px; }
 
-        .invoice-section-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } 
+        .invoice-section-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } /* Reduced padding */
 
         .invoice-section-title {
-            font-size: 13px; 
+            font-size: 13px; /* Slightly smaller */
             font-weight: 800;
             color: var(--dark-color);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px; 
+            margin-bottom: 10px; /* Reduced margin */
             padding-bottom: 8px;
             border-bottom: 2px solid var(--primary-color);
         }
 
-        .invoice-detail-row { margin-bottom: 5px; font-size: 12px; line-height: 1.5; } 
+        .invoice-detail-row { margin-bottom: 5px; font-size: 12px; line-height: 1.5; } /* Tighter rows */
         .invoice-detail-label { font-weight: 700; color: var(--dark-color); }
         .invoice-detail-value { color: var(--text-light); }
 
-        .invoice-items-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 12px; } 
+        .invoice-items-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 12px; } /* Tighter table */
         .invoice-items-table thead { background: var(--light-bg); }
 
         .invoice-items-table th {
-            padding: 10px 12px; 
+            padding: 10px 12px; /* Reduced padding */
             text-align: left;
             font-weight: 700;
             color: var(--dark-color);
             border: 1px solid #ddd;
-            font-size: 11px; 
+            font-size: 11px; /* Smaller header text */
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .invoice-items-table td { padding: 10px 12px; border: 1px solid #ddd; vertical-align: top; line-height: 1.5; } 
+        .invoice-items-table td { padding: 10px 12px; border: 1px solid #ddd; vertical-align: top; line-height: 1.5; } /* Reduced padding */
 
         .invoice-items-table .sl-num { font-weight: 700; color: var(--primary-color); text-align: center; width: 50px; }
         .invoice-items-table .qty-cell { text-align: center; width: 100px; font-weight: 600; }
 
         .invoice-totals { display: flex; justify-content: flex-end; margin-bottom: 15px; }
 
-        .totals-table { width: 300px; } 
+        .totals-table { width: 300px; } /* Slightly narrower */
 
         .totals-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 15px; 
+            padding: 8px 15px; /* Reduced padding */
             border-bottom: 1px solid #e0e0e0;
             font-size: 13px;
         }
@@ -1282,7 +1282,7 @@
         .amount-in-words {
             background: #fffef5;
             border-left: 4px solid #d4af37;
-            padding: 10px 15px; 
+            padding: 10px 15px; /* Reduced padding */
             margin-bottom: 15px;
             font-size: 13px;
             border-radius: 0 8px 8px 0;
@@ -1299,7 +1299,7 @@
             border-top: 2px solid #e0e0e0;
         }
 
-        .bank-details-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } 
+        .bank-details-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } /* Reduced padding */
 
         .bank-details-box h4 {
             font-size: 12px;
@@ -1318,11 +1318,11 @@
             align-items: center;
             justify-content: flex-end;
             text-align: center;
-            min-height: 120px; 
+            min-height: 120px; /* Reduced min-height */
         }
 
         .stamp-placeholder {
-            width: 90px; height: 90px; 
+            width: 90px; height: 90px; /* Smaller stamp */
             border: 3px dashed #ccc;
             border-radius: 50%;
             display: flex;
@@ -1974,21 +1974,21 @@
                 </div>
                 <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-list-alt"></i> Service Items</h4>
                 <div class="items-table-wrapper"><table class="items-table" id="itemsTable"><thead><tr><th style="width: 50px;">SL</th><th>Description of Services</th><th style="width: 120px;">QTY</th><th style="width: 80px;">Action</th></tr></thead><tbody id="itemsTableBody"><tr><td style="text-align: center; font-weight: 600;">01</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td></tr></tbody></table></div>
-                <button type="button" class="add-row-btn" onclick="addNewRow()"><i class="fas fa-plus"></i> Add New Item Row</button>
+                <button class="add-row-btn" onclick="addNewRow()"><i class="fas fa-plus"></i> Add New Item Row</button>
                 <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-rupee-sign"></i> Financial Summary</h4>
                 <div class="form-row">
                     <div class="form-group"><label>Taxable Value (₹) *</label><input type="number" id="taxableValue" placeholder="e.g., 10000" required></div>
                     <div class="form-group"><label>GST Rate (%)</label><select id="gstRate"><option value="18">IGST @ 18%</option><option value="12">IGST @ 12%</option><option value="5">IGST @ 5%</option><option value="0">Exempted</option></select></div>
                 </div>
-                <button type="button" class="generate-invoice-btn" onclick="generateInvoicePreview()"><i class="fas fa-file-invoice-dollar"></i> Generate Invoice Preview</button>
+                <button class="generate-invoice-btn" onclick="generateInvoicePreview()"><i class="fas fa-file-invoice-dollar"></i> Generate Invoice Preview</button>
             </div>
 
             <!-- INVOICE PREVIEW -->
             <div class="invoice-preview-section" id="invoicePreviewSection">
                 <div class="invoice-preview-actions">
-                    <button type="button" class="preview-action-btn print-btn" onclick="printInvoice()"><i class="fas fa-print"></i> Print Invoice</button>
-                    <button type="button" class="preview-action-btn download-btn" onclick="downloadPDF(event)"><i class="fas fa-download"></i> Download PDF</button>
-                    <button type="button" class="preview-action-btn close-preview-btn" onclick="closePreview()"><i class="fas fa-times"></i> Close Preview</button>
+                    <button class="preview-action-btn print-btn" onclick="printInvoice()"><i class="fas fa-print"></i> Print Invoice</button>
+                    <button class="preview-action-btn download-btn" onclick="downloadPDF(event)"><i class="fas fa-download"></i> Download PDF</button>
+                    <button class="preview-action-btn close-preview-btn" onclick="closePreview()"><i class="fas fa-times"></i> Close Preview</button>
                 </div>
                 <div class="invoice-document" id="invoiceDocument">
                     <div class="invoice-header">
@@ -2124,10 +2124,10 @@
                         </div>
                         
                         <div style="display: flex; gap: 12px; margin-top: 20px;">
-                            <button type="button" class="generate-invoice-btn" onclick="generateLetterPreview()" style="padding: 14px 28px; font-size: 15px;">
+                            <button class="generate-invoice-btn" onclick="generateLetterPreview()" style="padding: 14px 28px; font-size: 15px;">
                                 <i class="fas fa-eye"></i> Preview Letter
                             </button>
-                            <button type="button" class="action-btn primary" onclick="saveLetterDraft()" style="padding: 14px 28px; font-size: 15px;">
+                            <button class="action-btn primary" onclick="saveLetterDraft()" style="padding: 14px 28px; font-size: 15px;">
                                 <i class="fas fa-save"></i> Save Draft
                             </button>
                         </div>
@@ -2138,8 +2138,8 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: white; padding: 15px 20px; border-radius: 10px; box-shadow: var(--shadow);">
                             <h3 style="font-size: 18px; color: var(--dark-color); margin: 0;"><i class="fas fa-file-pdf" style="color: var(--secondary-color);"></i> Letter Preview</h3>
                             <div style="display: flex; gap: 10px;">
-                                <button type="button" class="preview-action-btn print-btn" onclick="printLetter()" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-print"></i> Print</button>
-                                <button type="button" class="preview-action-btn download-btn" onclick="downloadLetterPDF(event)" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-download"></i> Download PDF</button>
+                                <button class="preview-action-btn print-btn" onclick="printLetter()" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-print"></i> Print</button>
+                                <button class="preview-action-btn download-btn" onclick="downloadLetterPDF(event)" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-download"></i> Download PDF</button>
                             </div>
                         </div>
                         
@@ -2299,7 +2299,7 @@
             itemCounter++;
             const tbody = document.getElementById('itemsTableBody');
             const newRow = document.createElement('tr');
-            newRow.innerHTML = `<td style="text-align: center; font-weight: 600;">${String(itemCounter).padStart(2, '0')}</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button type="button" class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>`;
+            newRow.innerHTML = `<td style="text-align: center; font-weight: 600;">${String(itemCounter).padStart(2, '0')}</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>`;
             tbody.appendChild(newRow);
         }
 
@@ -2324,14 +2324,8 @@
             const clientGSTIN = document.getElementById('clientGSTIN').value || 'N/A';
             const clientState = document.getElementById('clientState').value || 'State';
             const sacCode = document.getElementById('sacCode').value || '9954';
-            
-            // Safely parse numbers to prevent NaN crashes
-            let taxableValue = parseFloat(document.getElementById('taxableValue').value);
-            if (isNaN(taxableValue)) taxableValue = 0;
-            
-            let gstRate = parseFloat(document.getElementById('gstRate').value);
-            if (isNaN(gstRate)) gstRate = 18;
-            
+            const taxableValue = parseFloat(document.getElementById('taxableValue').value) || 0;
+            const gstRate = parseFloat(document.getElementById('gstRate').value) || 18;
             const igstAmount = taxableValue * (gstRate / 100);
             const grandTotal = taxableValue + igstAmount;
 
@@ -2363,15 +2357,12 @@
         function closePreview() { document.getElementById('invoicePreviewSection').classList.remove('show'); }
 
         function formatDate(dateStr) {
-            if (!dateStr) return 'DD-MM-YYYY';
             const date = new Date(dateStr);
-            if (isNaN(date.getTime())) return 'DD-MM-YYYY';
             const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
         }
 
         function formatCurrency(num) {
-            if (isNaN(num)) num = 0;
             return num.toLocaleString('en-IN', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
@@ -2379,8 +2370,7 @@
         }
 
         function numberToWords(num) {
-            if (isNaN(num) || num === 0) return 'Zero';
-            num = Math.floor(num);
+            if (num === 0) return 'Zero';
             const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
             const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
 
@@ -2392,7 +2382,7 @@
                 if (n < 10000000) return convert(Math.floor(n / 100000)) + ' Lakh' + (n % 100000 !== 0 ? ' ' + convert(n % 100000) : '');
                 return convert(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 !== 0 ? ' ' + convert(n % 10000000) : '');
             }
-            return convert(num);
+            return convert(Math.floor(num));
         }
 
         function printInvoice() { window.print(); }
@@ -2681,7 +2671,6 @@
 
         // ============ UTILITY FUNCTIONS ============
         function escapeHtml(unsafe) {
-            if (unsafe === null || unsafe === undefined) return '';
             return unsafe
                 .toString()
                 .replace(/&/g, "&amp;")
