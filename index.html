@@ -1152,7 +1152,7 @@
         .close-preview-btn { background: #95a5a6; color: white; }
         .close-preview-btn:hover { background: #7f8c8d; }
 
-        /* Invoice Document */
+        /* Invoice Document - Optimized for single A4 page fit */
         .invoice-document {
             background: white !important;
             border: 1px solid #ddd;
@@ -1176,7 +1176,7 @@
         .invoice-header {
             background: linear-gradient(135deg, #1a3a52 0%, #2c5364 100%) !important;
             color: white;
-            padding: 30px 40px;
+            padding: 25px 35px; 
             position: relative;
         }
 
@@ -1185,20 +1185,20 @@
         .invoice-company { display: flex; align-items: center; gap: 15px; }
 
         .company-logo-circle {
-            width: 60px; height: 60px;
+            width: 50px; height: 50px; 
             border: 3px solid #d4af37;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             color: #d4af37;
         }
 
-        .company-name-invoice { font-size: 28px; font-weight: 800; letter-spacing: 1px; }
+        .company-name-invoice { font-size: 26px; font-weight: 800; letter-spacing: 1px; } 
         .company-name-invoice span { color: #d4af37; }
 
-        .company-contact-small { font-size: 11px; opacity: 0.85; margin-top: 5px; line-height: 1.5; }
+        .company-contact-small { font-size: 11px; opacity: 0.85; margin-top: 5px; line-height: 1.4; }
 
         .invoice-gstin-box {
             background: rgba(212, 175, 55, 0.2);
@@ -1210,81 +1210,81 @@
             letter-spacing: 1px;
         }
 
-        .invoice-title-area { text-align: right; margin-top: 20px; }
-        .invoice-title-text { font-size: 38px; font-weight: 900; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; }
+        .invoice-title-area { text-align: right; margin-top: 15px; }
+        .invoice-title-text { font-size: 34px; font-weight: 900; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; } 
 
-        .invoice-meta { display: flex; justify-content: flex-end; gap: 30px; margin-top: 10px; font-size: 13px; }
+        .invoice-meta { display: flex; justify-content: flex-end; gap: 30px; margin-top: 8px; font-size: 12px; }
         .invoice-meta-item strong { color: #d4af37; }
 
-        .invoice-body { padding: 35px 40px; }
+        .invoice-body { padding: 25px 35px; } 
 
-        .invoice-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .invoice-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 20px; }
 
-        .invoice-section-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; }
+        .invoice-section-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } 
 
         .invoice-section-title {
-            font-size: 14px;
+            font-size: 13px; 
             font-weight: 800;
             color: var(--dark-color);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 10px; 
+            padding-bottom: 8px;
             border-bottom: 2px solid var(--primary-color);
         }
 
-        .invoice-detail-row { margin-bottom: 8px; font-size: 13px; line-height: 1.6; }
+        .invoice-detail-row { margin-bottom: 5px; font-size: 12px; line-height: 1.5; } 
         .invoice-detail-label { font-weight: 700; color: var(--dark-color); }
         .invoice-detail-value { color: var(--text-light); }
 
-        .invoice-items-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; font-size: 13px; }
+        .invoice-items-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 12px; } 
         .invoice-items-table thead { background: var(--light-bg); }
 
         .invoice-items-table th {
-            padding: 12px 15px;
+            padding: 10px 12px; 
             text-align: left;
             font-weight: 700;
             color: var(--dark-color);
             border: 1px solid #ddd;
-            font-size: 12px;
+            font-size: 11px; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .invoice-items-table td { padding: 15px; border: 1px solid #ddd; vertical-align: top; line-height: 1.6; }
+        .invoice-items-table td { padding: 10px 12px; border: 1px solid #ddd; vertical-align: top; line-height: 1.5; } 
 
         .invoice-items-table .sl-num { font-weight: 700; color: var(--primary-color); text-align: center; width: 50px; }
         .invoice-items-table .qty-cell { text-align: center; width: 100px; font-weight: 600; }
 
-        .invoice-totals { display: flex; justify-content: flex-end; margin-bottom: 25px; }
+        .invoice-totals { display: flex; justify-content: flex-end; margin-bottom: 15px; }
 
-        .totals-table { width: 350px; }
+        .totals-table { width: 300px; } 
 
         .totals-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 8px 15px; 
             border-bottom: 1px solid #e0e0e0;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .totals-row.grand-total {
             background: var(--dark-color);
             color: white;
             font-weight: 800;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 8px;
             border: none;
         }
 
-        .totals-row.grand-total .total-amount { color: #d4af37; font-size: 22px; }
+        .totals-row.grand-total .total-amount { color: #d4af37; font-size: 20px; }
 
         .amount-in-words {
             background: #fffef5;
             border-left: 4px solid #d4af37;
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            font-size: 14px;
+            padding: 10px 15px; 
+            margin-bottom: 15px;
+            font-size: 13px;
             border-radius: 0 8px 8px 0;
         }
 
@@ -1293,23 +1293,23 @@
         .invoice-footer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-            padding-top: 25px;
+            gap: 25px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 2px solid #e0e0e0;
         }
 
-        .bank-details-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; }
+        .bank-details-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; } 
 
         .bank-details-box h4 {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 800;
             color: var(--dark-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
-        .bank-detail-line { font-size: 12px; margin-bottom: 6px; color: var(--text-light); }
+        .bank-detail-line { font-size: 11px; margin-bottom: 4px; color: var(--text-light); }
         .bank-detail-line strong { color: var(--dark-color); }
 
         .signature-box {
@@ -1318,20 +1318,20 @@
             align-items: center;
             justify-content: flex-end;
             text-align: center;
-            min-height: 180px;
+            min-height: 120px; 
         }
 
         .stamp-placeholder {
-            width: 120px; height: 120px;
+            width: 90px; height: 90px; 
             border: 3px dashed #ccc;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
-            font-size: 11px;
+            font-size: 10px;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             position: relative;
         }
 
@@ -1339,12 +1339,12 @@
             content: 'KPSWAMY TECZ';
             position: absolute;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 12px;
             color: var(--primary-color);
         }
 
-        .signature-line { font-size: 14px; color: var(--text-light); margin-top: 10px; }
-        .signature-name { font-weight: 700; color: var(--dark-color); font-size: 15px; margin-top: 25px; }
+        .signature-line { font-size: 13px; color: var(--text-light); margin-top: 5px; }
+        .signature-name { font-weight: 700; color: var(--dark-color); font-size: 14px; margin-top: 15px; }
 
         /* ==================== LETTER PAD STYLES ==================== */
         .letterpad-section { margin-top: 30px; }
@@ -1438,68 +1438,69 @@
         .ref-no-display { font-weight: 700; color: var(--primary-color); }
         .date-display { font-weight: 600; color: var(--text-dark); }
 
+        /* Optimized Letter Body for tighter, neater spacing */
         .letter-body {
-            padding: 40px;
-            line-height: 1.9;
-            font-size: 15px;
+            padding: 30px 40px;
+            line-height: 1.6; 
+            font-size: 14px;
             color: var(--text-dark);
         }
 
-        .letter-to-section { margin-bottom: 25px; }
+        .letter-to-section { margin-bottom: 20px; }
 
         .letter-to-label {
             font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 8px;
-            font-size: 15px;
+            margin-bottom: 5px;
+            font-size: 14px;
         }
 
         .letter-to-name {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .letter-to-address {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .letter-subject {
             background: var(--light-bg);
-            padding: 15px 20px;
+            padding: 12px 15px;
             border-left: 4px solid var(--secondary-color);
-            margin-bottom: 25px;
-            font-size: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
         .letter-subject-label { font-weight: 700; color: var(--dark-color); margin-right: 8px; }
         .letter-subject-text { font-weight: 600; color: var(--primary-color); }
 
         .letter-salutation {
-            font-size: 15px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 12px;
             color: var(--text-dark);
         }
 
         .letter-content-text {
-            font-size: 15px;
-            line-height: 2;
+            font-size: 14px;
+            line-height: 1.6; 
             text-align: justify;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             white-space: pre-wrap;
         }
 
         .letter-closing {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: left;
         }
 
         .closing-text {
-            font-size: 15px;
-            margin-bottom: 50px;
+            font-size: 14px;
+            margin-bottom: 40px;
             color: var(--text-dark);
         }
 
@@ -1513,7 +1514,7 @@
         .sig-line {
             border-top: 1px solid #333;
             width: 200px;
-            margin: 0 0 10px auto; /* Aligns line to the right */
+            margin: 0 0 10px auto; 
             display: block;
         }
 
@@ -1521,7 +1522,7 @@
             font-size: 18px;
             font-weight: 700;
             color: var(--dark-color);
-            font-family: 'Courier Prime', 'Courier New', Courier, monospace; /* Kept typewriter font */
+            font-family: 'Courier Prime', 'Courier New', Courier, monospace;
             margin-bottom: 5px;
             display: block;
         }
@@ -1546,7 +1547,7 @@
             color: #999;
             font-size: 11px;
             border-top: 1px solid #eee;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         /* Responsive */
@@ -1973,21 +1974,21 @@
                 </div>
                 <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-list-alt"></i> Service Items</h4>
                 <div class="items-table-wrapper"><table class="items-table" id="itemsTable"><thead><tr><th style="width: 50px;">SL</th><th>Description of Services</th><th style="width: 120px;">QTY</th><th style="width: 80px;">Action</th></tr></thead><tbody id="itemsTableBody"><tr><td style="text-align: center; font-weight: 600;">01</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td></tr></tbody></table></div>
-                <button class="add-row-btn" onclick="addNewRow()"><i class="fas fa-plus"></i> Add New Item Row</button>
+                <button type="button" class="add-row-btn" onclick="addNewRow()"><i class="fas fa-plus"></i> Add New Item Row</button>
                 <h4 style="margin: 25px 0 15px; color: var(--dark-color); font-size: 16px;"><i class="fas fa-rupee-sign"></i> Financial Summary</h4>
                 <div class="form-row">
                     <div class="form-group"><label>Taxable Value (₹) *</label><input type="number" id="taxableValue" placeholder="e.g., 10000" required></div>
                     <div class="form-group"><label>GST Rate (%)</label><select id="gstRate"><option value="18">IGST @ 18%</option><option value="12">IGST @ 12%</option><option value="5">IGST @ 5%</option><option value="0">Exempted</option></select></div>
                 </div>
-                <button class="generate-invoice-btn" onclick="generateInvoicePreview()"><i class="fas fa-file-invoice-dollar"></i> Generate Invoice Preview</button>
+                <button type="button" class="generate-invoice-btn" onclick="generateInvoicePreview()"><i class="fas fa-file-invoice-dollar"></i> Generate Invoice Preview</button>
             </div>
 
             <!-- INVOICE PREVIEW -->
             <div class="invoice-preview-section" id="invoicePreviewSection">
                 <div class="invoice-preview-actions">
-                    <button class="preview-action-btn print-btn" onclick="printInvoice()"><i class="fas fa-print"></i> Print Invoice</button>
-                    <button class="preview-action-btn download-btn" onclick="downloadPDF(event)"><i class="fas fa-download"></i> Download PDF</button>
-                    <button class="preview-action-btn close-preview-btn" onclick="closePreview()"><i class="fas fa-times"></i> Close Preview</button>
+                    <button type="button" class="preview-action-btn print-btn" onclick="printInvoice()"><i class="fas fa-print"></i> Print Invoice</button>
+                    <button type="button" class="preview-action-btn download-btn" onclick="downloadPDF(event)"><i class="fas fa-download"></i> Download PDF</button>
+                    <button type="button" class="preview-action-btn close-preview-btn" onclick="closePreview()"><i class="fas fa-times"></i> Close Preview</button>
                 </div>
                 <div class="invoice-document" id="invoiceDocument">
                     <div class="invoice-header">
@@ -2045,7 +2046,7 @@
                             <div class="signature-box">
                                 <div class="stamp-placeholder"></div>
                                 <div class="signature-line">for <strong>KPSwamy TecZ</strong></div>
-                                <div style="margin-top: 30px; font-size: 24px; color: var(--dark-color);">S. Balamurugan</div>
+                                <div style="margin-top: 15px; font-size: 20px; color: var(--dark-color);">S. Balamurugan</div>
                                 <div class="signature-name">Authorized Signatory</div>
                             </div>
                         </div>
@@ -2123,10 +2124,10 @@
                         </div>
                         
                         <div style="display: flex; gap: 12px; margin-top: 20px;">
-                            <button class="generate-invoice-btn" onclick="generateLetterPreview()" style="padding: 14px 28px; font-size: 15px;">
+                            <button type="button" class="generate-invoice-btn" onclick="generateLetterPreview()" style="padding: 14px 28px; font-size: 15px;">
                                 <i class="fas fa-eye"></i> Preview Letter
                             </button>
-                            <button class="action-btn primary" onclick="saveLetterDraft()" style="padding: 14px 28px; font-size: 15px;">
+                            <button type="button" class="action-btn primary" onclick="saveLetterDraft()" style="padding: 14px 28px; font-size: 15px;">
                                 <i class="fas fa-save"></i> Save Draft
                             </button>
                         </div>
@@ -2137,8 +2138,8 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: white; padding: 15px 20px; border-radius: 10px; box-shadow: var(--shadow);">
                             <h3 style="font-size: 18px; color: var(--dark-color); margin: 0;"><i class="fas fa-file-pdf" style="color: var(--secondary-color);"></i> Letter Preview</h3>
                             <div style="display: flex; gap: 10px;">
-                                <button class="preview-action-btn print-btn" onclick="printLetter()" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-print"></i> Print</button>
-                                <button class="preview-action-btn download-btn" onclick="downloadLetterPDF(event)" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-download"></i> Download PDF</button>
+                                <button type="button" class="preview-action-btn print-btn" onclick="printLetter()" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-print"></i> Print</button>
+                                <button type="button" class="preview-action-btn download-btn" onclick="downloadLetterPDF(event)" style="padding: 10px 20px; font-size: 13px;"><i class="fas fa-download"></i> Download PDF</button>
                             </div>
                         </div>
                         
@@ -2298,7 +2299,7 @@
             itemCounter++;
             const tbody = document.getElementById('itemsTableBody');
             const newRow = document.createElement('tr');
-            newRow.innerHTML = `<td style="text-align: center; font-weight: 600;">${String(itemCounter).padStart(2, '0')}</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>`;
+            newRow.innerHTML = `<td style="text-align: center; font-weight: 600;">${String(itemCounter).padStart(2, '0')}</td><td><textarea class="item-desc" rows="2" placeholder="Enter service description..."></textarea></td><td><input type="text" class="item-qty" placeholder="e.g., 10 Nos"></td><td><button type="button" class="remove-row-btn" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>`;
             tbody.appendChild(newRow);
         }
 
@@ -2323,8 +2324,14 @@
             const clientGSTIN = document.getElementById('clientGSTIN').value || 'N/A';
             const clientState = document.getElementById('clientState').value || 'State';
             const sacCode = document.getElementById('sacCode').value || '9954';
-            const taxableValue = parseFloat(document.getElementById('taxableValue').value) || 0;
-            const gstRate = parseFloat(document.getElementById('gstRate').value) || 18;
+            
+            // Safely parse numbers to prevent NaN crashes
+            let taxableValue = parseFloat(document.getElementById('taxableValue').value);
+            if (isNaN(taxableValue)) taxableValue = 0;
+            
+            let gstRate = parseFloat(document.getElementById('gstRate').value);
+            if (isNaN(gstRate)) gstRate = 18;
+            
             const igstAmount = taxableValue * (gstRate / 100);
             const grandTotal = taxableValue + igstAmount;
 
@@ -2356,12 +2363,15 @@
         function closePreview() { document.getElementById('invoicePreviewSection').classList.remove('show'); }
 
         function formatDate(dateStr) {
+            if (!dateStr) return 'DD-MM-YYYY';
             const date = new Date(dateStr);
+            if (isNaN(date.getTime())) return 'DD-MM-YYYY';
             const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
         }
 
         function formatCurrency(num) {
+            if (isNaN(num)) num = 0;
             return num.toLocaleString('en-IN', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
@@ -2369,7 +2379,8 @@
         }
 
         function numberToWords(num) {
-            if (num === 0) return 'Zero';
+            if (isNaN(num) || num === 0) return 'Zero';
+            num = Math.floor(num);
             const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
             const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
 
@@ -2381,12 +2392,12 @@
                 if (n < 10000000) return convert(Math.floor(n / 100000)) + ' Lakh' + (n % 100000 !== 0 ? ' ' + convert(n % 100000) : '');
                 return convert(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 !== 0 ? ' ' + convert(n % 10000000) : '');
             }
-            return convert(Math.floor(num));
+            return convert(num);
         }
 
         function printInvoice() { window.print(); }
 
-        // ============ MULTI-PAGE PDF DOWNLOAD LOGIC (INVOICE) ============
+        // ============ SMART AUTO-FIT PDF DOWNLOAD LOGIC (INVOICE) ============
         function getRowBreakpoints(container, scale) {
             const containerTop = container.getBoundingClientRect().top;
             const rows = container.querySelectorAll('.invoice-items-table tr');
@@ -2441,12 +2452,6 @@
             
             const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
             const scale = 2;
-
-            const marginTop = 10;    
-            const marginBottom = 16; 
-            const borderInset = 5;   
-            const borderPadding = 4; 
-            const sideMargin = borderInset + borderPadding; 
             
             fontsReady.then(function() {
                 setTimeout(function() {
@@ -2465,61 +2470,53 @@
                         const jsPDF = window.jspdf ? window.jspdf.jsPDF : window.jsPDF;
                         const pdf = new jsPDF('p', 'mm', 'a4');
 
-                        const pdfWidth = pdf.internal.pageSize.getWidth();   
-                        const pdfHeight = pdf.internal.pageSize.getHeight(); 
+                        const pdfWidth = pdf.internal.pageSize.getWidth();   // 210mm
+                        const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
 
-                        const imgWidth = pdfWidth - (sideMargin * 2);
-                        const pxPerMm = canvas.width / imgWidth;
-                        const contentAreaHeight = pdfHeight - marginTop - marginBottom;
-                        const pageHeightPx = contentAreaHeight * pxPerMm;
+                        let imgWidth = pdfWidth;
+                        let imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-                        const slices = computeCanvasSlices(canvas, breakpoints, pageHeightPx);
-                        const totalPages = slices.length;
+                        const imgData = canvas.toDataURL('image/jpeg', 0.98);
 
-                        slices.forEach(function(slice, idx) {
-                            const pageCanvas = document.createElement('canvas');
-                            pageCanvas.width = canvas.width;
-                            pageCanvas.height = slice.height;
-                            const ctx = pageCanvas.getContext('2d');
-                            ctx.fillStyle = '#ffffff';
-                            ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-                            ctx.drawImage(
-                                canvas,
-                                0, slice.start, canvas.width, slice.height,
-                                0, 0, canvas.width, slice.height
-                            );
-
-                            const sliceHeightMm = slice.height / pxPerMm;
-                            const imgData = pageCanvas.toDataURL('image/jpeg', 0.95);
-
-                            if (idx > 0) pdf.addPage();
-
-                            pdf.setDrawColor(212, 175, 55); 
-                            pdf.setLineWidth(0.6);
-                            pdf.rect(
-                                borderInset,
-                                borderInset,
-                                pdfWidth - (borderInset * 2),
-                                pdfHeight - (borderInset * 2)
-                            );
-
-                            pdf.addImage(imgData, 'JPEG', sideMargin, marginTop, imgWidth, sliceHeightMm);
-
-                            const footerLineY = pdfHeight - marginBottom + 4;
-                            pdf.setDrawColor(200, 200, 200);
-                            pdf.setLineWidth(0.2);
-                            pdf.line(sideMargin, footerLineY, pdfWidth - sideMargin, footerLineY);
-
-                            pdf.setFontSize(9);
-                            pdf.setTextColor(120, 120, 120);
-                            pdf.text('Page ' + (idx + 1) + ' of ' + totalPages, pdfWidth / 2, pdfHeight - 8, { align: 'center' });
-                        });
+                        if (imgHeight <= pdfHeight) {
+                            // Scenario 1: Content naturally fits on one single page. Place it exactly.
+                            pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+                        } else if (imgHeight <= pdfHeight * 1.15) {
+                            // Scenario 2: Content is slightly too long (up to 15% overflow). 
+                            // Shrink it proportionally to fit neatly onto a single A4 page.
+                            const shrinkFactor = pdfHeight / imgHeight;
+                            imgWidth = imgWidth * shrinkFactor;
+                            imgHeight = pdfHeight;
+                            const xOffset = (pdfWidth - imgWidth) / 2; // Center it horizontally to avoid awkward left alignment
+                            pdf.addImage(imgData, 'JPEG', xOffset, 0, imgWidth, imgHeight);
+                        } else {
+                            // Scenario 3: Content is vastly too long. Slice it neatly across multiple pages.
+                            const pxPerMm = canvas.width / pdfWidth;
+                            const pageHeightPx = pdfHeight * pxPerMm;
+                            const slices = computeCanvasSlices(canvas, breakpoints, pageHeightPx);
+                            
+                            slices.forEach(function(slice, idx) {
+                                const pageCanvas = document.createElement('canvas');
+                                pageCanvas.width = canvas.width;
+                                pageCanvas.height = slice.height;
+                                const ctx = pageCanvas.getContext('2d');
+                                ctx.fillStyle = '#ffffff';
+                                ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+                                ctx.drawImage(canvas, 0, slice.start, canvas.width, slice.height, 0, 0, canvas.width, slice.height);
+                                
+                                const sliceHeightMm = slice.height / pxPerMm;
+                                const sliceImgData = pageCanvas.toDataURL('image/jpeg', 0.98);
+                                
+                                if (idx > 0) pdf.addPage();
+                                pdf.addImage(sliceImgData, 'JPEG', 0, 0, pdfWidth, sliceHeightMm);
+                            });
+                        }
 
                         pdf.save(invNo.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf');
                         
                         btn.innerHTML = originalText;
                         btn.disabled = false;
-                        showNotification('✅ Invoice PDF downloaded (' + totalPages + (totalPages === 1 ? ' page)' : ' pages)'), 'success');
+                        showNotification('✅ Invoice PDF downloaded successfully!', 'success');
                     }).catch(function(error) {
                         console.error('Invoice PDF generation failed:', error);
                         btn.innerHTML = originalText;
@@ -2583,7 +2580,7 @@
             const content = document.getElementById('letterDocument').innerHTML;
             const printWindow = window.open('', '_blank');
             printWindow.document.write('<html><head><title>KPSwamy TecZ - Letter</title>');
-            printWindow.document.write('<style>body{font-family:\'Courier Prime\', \'Courier New\', Courier, monospace;padding:40px;line-height:1.8;color:#333;} .letter-header{background:#1a3a52;color:white;padding:30px;border-bottom:4px solid #ff8c00;} .letterhead-top{display:flex;justify-content:space-between;align-items:center;} .company-info-letter h1{font-size:28px;margin:0;} .tagline-letter{font-size:12px;opacity:0.9;letter-spacing:2px;text-transform:uppercase;} .contact-box-letter{text-align:right;font-size:13px;line-height:1.8;} .contact-box-letter div{margin:3px 0;} .letter-ref-date{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #ddd;font-size:14px;margin:20px 0;} .letter-to-section{margin-bottom:20px;} .letter-to-name{font-size:18px;font-weight:bold;color:#1a5f7a;margin:5px 0;} .letter-subject{background:#f8f9fa;padding:15px;border-left:4px solid #ff8c00;margin:20px 0;} .letter-salutation{font-size:15px;margin:15px 0;} .letter-content-text{font-size:15px;line-height:2;text-align:justify;margin:20px 0;white-space:pre-wrap;} .letter-closing{margin-top:40px;} .signature-section{text-align:right;} .sig-line{border-top:1px solid #333;width:200px;margin:0 0 10px auto;} .sig-name{font-size:20px;color:#1a3a52;margin-bottom:5px;} .sig-designation{color:#666;font-size:14px;} .letter-footer-note{text-align:center;padding:10px;color:#999;border-top:1px solid #eee;margin-top:40px;}</style>');
+            printWindow.document.write('<style>body{font-family:\'Courier Prime\', \'Courier New\', Courier, monospace;padding:40px;line-height:1.8;color:#333;} .letter-header{background:#1a3a52;color:white;padding:30px;border-bottom:4px solid #ff8c00;} .letterhead-top{display:flex;justify-content:space-between;align-items:center;} .company-info-letter h1{font-size:28px;margin:0;} .tagline-letter{font-size:12px;opacity:0.9;letter-spacing:2px;text-transform:uppercase;} .contact-box-letter{text-align:right;font-size:13px;line-height:1.8;} .contact-box-letter div{margin:3px 0;} .letter-ref-date{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #ddd;font-size:14px;margin:20px 0;} .letter-to-section{margin-bottom:20px;} .letter-to-name{font-size:18px;font-weight:bold;color:#1a5f7a;margin:5px 0;} .letter-subject{background:#f8f9fa;padding:15px;border-left:4px solid #ff8c00;margin:20px 0;} .letter-salutation{font-size:15px;margin:15px 0;} .letter-content-text{font-size:15px;line-height:2;text-align:justify;margin:20px 0;white-space:pre-wrap;} .letter-closing{margin-top:40px;} .signature-section{text-align:right;} .sig-line{border-top:1px solid #333;width:200px;margin:0 0 10px:auto;} .sig-name{font-size:20px;color:#1a3a52;margin-bottom:5px;} .sig-designation{color:#666;font-size:14px;} .letter-footer-note{text-align:center;padding:10px;color:#999;border-top:1px solid #eee;margin-top:40px;}</style>');
             printWindow.document.write('</head><body>');
             printWindow.document.write(content);
             printWindow.document.write('</body></html>');
@@ -2591,7 +2588,7 @@
             printWindow.print();
         }
 
-        // ============ MULTI-PAGE PDF DOWNLOAD LOGIC (LETTER PAD) ============
+        // ============ SMART AUTO-FIT PDF DOWNLOAD LOGIC (LETTER PAD) ============
         function downloadLetterPDF(e) {
             e.preventDefault();
             
@@ -2607,19 +2604,9 @@
             
             const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
             const scale = 2;
-
-            // Set margins to 0 to remove unnecessary space. 
-            // The HTML document's internal padding will naturally act as the page margin.
-            const marginTop = 0;    
-            const marginBottom = 0; 
-            const borderInset = 0;   
-            const borderPadding = 0; 
-            const sideMargin = 0; 
             
             fontsReady.then(function() {
                 setTimeout(function() {
-                    const breakpoints = []; 
-
                     html2canvas(element, {
                         scale: scale,
                         useCORS: true,
@@ -2633,44 +2620,53 @@
                         const jsPDF = window.jspdf ? window.jspdf.jsPDF : window.jsPDF;
                         const pdf = new jsPDF('p', 'mm', 'a4');
 
-                        const pdfWidth = pdf.internal.pageSize.getWidth();   
-                        const pdfHeight = pdf.internal.pageSize.getHeight(); 
+                        const pdfWidth = pdf.internal.pageSize.getWidth();   // 210mm
+                        const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
 
-                        const imgWidth = pdfWidth - (sideMargin * 2);
-                        const pxPerMm = canvas.width / imgWidth;
-                        const contentAreaHeight = pdfHeight - marginTop - marginBottom;
-                        const pageHeightPx = contentAreaHeight * pxPerMm;
+                        let imgWidth = pdfWidth;
+                        let imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-                        const slices = computeCanvasSlices(canvas, breakpoints, pageHeightPx);
-                        const totalPages = slices.length;
+                        const imgData = canvas.toDataURL('image/jpeg', 0.98);
 
-                        slices.forEach(function(slice, idx) {
-                            const pageCanvas = document.createElement('canvas');
-                            pageCanvas.width = canvas.width;
-                            pageCanvas.height = slice.height;
-                            const ctx = pageCanvas.getContext('2d');
-                            ctx.fillStyle = '#ffffff';
-                            ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-                            ctx.drawImage(
-                                canvas,
-                                0, slice.start, canvas.width, slice.height,
-                                0, 0, canvas.width, slice.height
-                            );
-
-                            const sliceHeightMm = slice.height / pxPerMm;
-                            const imgData = pageCanvas.toDataURL('image/jpeg', 0.95);
-
-                            if (idx > 0) pdf.addPage();
-
-                            // Removed PDF border and footer line drawing to eliminate unnecessary space
-                            pdf.addImage(imgData, 'JPEG', sideMargin, marginTop, imgWidth, sliceHeightMm);
-                        });
+                        if (imgHeight <= pdfHeight) {
+                            // Scenario 1: Content naturally fits on one single page. Place it exactly.
+                            pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+                        } else if (imgHeight <= pdfHeight * 1.15) {
+                            // Scenario 2: Content is slightly too long (up to 15% overflow). 
+                            // Shrink it proportionally to fit neatly onto a single A4 page.
+                            const shrinkFactor = pdfHeight / imgHeight;
+                            imgWidth = imgWidth * shrinkFactor;
+                            imgHeight = pdfHeight;
+                            const xOffset = (pdfWidth - imgWidth) / 2; // Center it horizontally to avoid awkward left alignment
+                            pdf.addImage(imgData, 'JPEG', xOffset, 0, imgWidth, imgHeight);
+                        } else {
+                            // Scenario 3: Content is vastly too long. Slice it neatly across multiple pages.
+                            const pxPerMm = canvas.width / pdfWidth;
+                            const pageHeightPx = pdfHeight * pxPerMm;
+                            const slices = computeCanvasSlices(canvas, [], pageHeightPx);
+                            
+                            slices.forEach(function(slice, idx) {
+                                const pageCanvas = document.createElement('canvas');
+                                pageCanvas.width = canvas.width;
+                                pageCanvas.height = slice.height;
+                                const ctx = pageCanvas.getContext('2d');
+                                ctx.fillStyle = '#ffffff';
+                                ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+                                ctx.drawImage(canvas, 0, slice.start, canvas.width, slice.height, 0, 0, canvas.width, slice.height);
+                                
+                                const sliceHeightMm = slice.height / pxPerMm;
+                                const sliceImgData = pageCanvas.toDataURL('image/jpeg', 0.98);
+                                
+                                if (idx > 0) pdf.addPage();
+                                pdf.addImage(sliceImgData, 'JPEG', 0, 0, pdfWidth, sliceHeightMm);
+                            });
+                        }
 
                         pdf.save(refNo.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf');
                         
                         btn.innerHTML = originalText;
                         btn.disabled = false;
-                        showNotification('✅ Letter PDF downloaded (' + totalPages + (totalPages === 1 ? ' page)' : ' pages)'), 'success');
+                        showNotification('✅ Letter PDF downloaded successfully!', 'success');
                     }).catch(function(error) {
                         console.error('Letter PDF generation failed:', error);
                         btn.innerHTML = originalText;
@@ -2685,6 +2681,7 @@
 
         // ============ UTILITY FUNCTIONS ============
         function escapeHtml(unsafe) {
+            if (unsafe === null || unsafe === undefined) return '';
             return unsafe
                 .toString()
                 .replace(/&/g, "&amp;")
